@@ -1,0 +1,124 @@
+body, h1, h2, p, dd, dt, li, ul, dl {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: #faf6ed;
+    color: #222;
+    -webkit-font-smoothing: antialiased; /* remove o efeito smoothing das fontes que o navegador da como padrão e deixa ela mais limpa */
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr; /* Criação de layout grid 4 colunas, sendo ela 1 fr, 120px, outro de 300px min e 800px max e 1 fr */
+}
+
+.menu {
+    grid-column: 3 / 5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: #fb5;
+}
+
+.menu ul{
+    display: flex;  /* Flex container */
+    flex-wrap: wrap;
+    padding: 10px; /* Distância dos botões pra barra de 10 px */
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;  /* Criar área em volta dos botões da nav */
+    margin-right: 10px; /* Separar melhor a lista */
+    color: #222;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: .1em;
+}
+
+.grid-section {
+    grid-column: 2 / 4; /* grid vai começar da linha 2 e vai até a linha 4 do template criado por grid */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 90px 300px 1fr;
+    grid-gap: 20px;
+    margin-bottom: 4rem;
+}
+
+.titulo {
+    font-family: 'Playfair Display SC';
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    grid-column: 1 / 4; /* Pega da linha 1, até a linha 4 no template grid */
+}
+
+.animais h2 {
+    font-family: monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1em; /* Espaçamento entra cada letra */
+    margin-bottom: 1rem;
+    color: #E54;
+}
+
+.animais h2::before {
+    content: ''; /* before sempre vai ter content, mesmo que seja vazio */
+    display: inline-block; /* Para ficar na mesma linha que o H2 do titulo dos animais o bloco, ele trava lá o elemento*/
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+    background: #fb5;
+}
+
+/* 
+    letter-spacing - Espaçamento entre cada letra
+    line-height - Espaçamento entre cada linha de texto
+*/
+
+.animais p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2; /* Espaçamento de 1.2 entre cada linha de texto */
+    margin-bottom: 1rem;
+}
+
+.animais-lista {
+    height: 360px;
+    overflow-y: scroll;
+    grid-column: 2;
+}
+
+.animais-lista::-webkit-scrollbar {
+    width: 18px;
+}
+
+.animais-lista::-webkit-scrollbar-thumb{
+    background: #FB5;
+    border-left: 4px solid #faf6ed;
+    border-right: 4px solid #faf6ed;
+}
+
+.animais-lista::-webkit-scrollbar-track{
+    background: #faf6ed;
+}
+
+.animais-descricao {
+    grid-column: 3;
+}
+
+.animais-descricao section {
+    margin-bottom: 3rem;
+}
